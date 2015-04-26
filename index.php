@@ -5,6 +5,9 @@
 	<title></title>
 </head>
 <body>
-
+<header>
+	<h1>comunidad lsa</h1>
+	<small>comunidad sorda, frase</small>
+</header>
 </body>
 </html>
