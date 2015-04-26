@@ -15,10 +15,10 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<script src="js/jquery-2.0.3.min.js" type="text/Javascript"></script>
-		<script src="js/code.js" type="text/Javascript"></script>
+		
 </head>
 <body>
+		
 			<nav class="navbar navbar-default row" role="navigation">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">

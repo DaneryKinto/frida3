@@ -49,11 +49,13 @@
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
 				<h3>Seccion de VIDEOS</h3>
+				<!--ULTIMOS VIDEOS videos importantes vista previa y descripcion-->
 			</div>
 			
 		</div>
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
+				<!--ULTIMOS VIDEOS videos importantes vista previa y descripcion-->
 				<h3>Seccion de NOTICIAS</h3>
 			</div>
 			
@@ -65,13 +67,8 @@
 			
 		</div>
 		</div><!--cierre de container fluid-->
-<div class="container-fluid">
-	<footer class="row">
-		<div class="col-lg-12 col-md-12">
-			<h3>PIE DE PAGINA</h3>
-		</div>
-	</footer>		
-</div>
-	
-</body>
-</html>
+		
+		<!-- Este es el pie de pagina -->
+		<?php
+			include("php/partes/footer.php");
+		?>
