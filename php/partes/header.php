@@ -53,7 +53,7 @@
 						<button type="submit" class="btn btn-default">Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">administrar</a></li>
+						<li><a href="#admin">administrar</a></li>
 						
 					</ul>
 				</div><!-- /.navbar-collapse -->
