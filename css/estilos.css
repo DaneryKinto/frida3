@@ -5,3 +5,7 @@
 .costado{
 	background: yellow;
 }
+body{
+	/*E padding alinea el body con el nav fixed*/
+	padding-top: 50px;
+}

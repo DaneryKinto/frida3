@@ -19,7 +19,7 @@
 </head>
 <body>
 		
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
@@ -48,7 +48,7 @@
 	      </ul>
 	      <form class="navbar-form navbar-left" role="search">
 	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
+	          <input type="text" class="form-control" placeholder="Buscar">
 	        </div>
 	        <button type="submit" class="btn btn-default">Buscar</button>
 	      </form>
