@@ -35,14 +35,14 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Inicio<span class="sr-only">(current)</span></a></li>
-	        <li><a href="#">Servicios</a></li>
-	        <li><a href="#">Noticias</a></li>
+	        <li class="active"><a href="index.php">Inicio<span class="sr-only">(current)</span></a></li>
+	        <li><a href="servicios.php">Servicios</a></li>
+	        <li><a href="noticias.php">Noticias</a></li>
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
-	            <li><a href="#">Por abecedario</a></li>
-	            <li><a href="#">Por categoría</a></li>
+	            <li><a href="abecedario.php">Por abecedario</a></li>
+	            <li><a href="categorias.php">Por categoría</a></li>
 	          </ul>
 	        </li>
 	      </ul>
@@ -53,7 +53,7 @@
 	        <button type="submit" class="btn btn-default">Buscar</button>
 	      </form>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">Administrar</a></li>
+	        <li><a href="admin.php">Administrar</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
