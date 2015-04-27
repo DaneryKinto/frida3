@@ -48,7 +48,7 @@
 	      </ul>
 	      <form class="navbar-form navbar-left" role="search">
 	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Buscar">
+	          <input type="text" class="form-control" placeholder="Buscar" id="buscador-nav">
 	        </div>
 	        <button type="submit" class="btn btn-default">Buscar</button>
 	      </form>
@@ -56,5 +56,8 @@
 	        <li><a href="admin.php">Administrar</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
+	    <div id="resultado">
+	    	
+	    </div>
 	  </div><!-- /.container-fluid -->
 	</nav>		

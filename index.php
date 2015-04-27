@@ -45,7 +45,7 @@
 			    <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div>
-		<div class="container">
+		<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
 				<h3>Seccion de VIDEOS</h3>
