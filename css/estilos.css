@@ -8,4 +8,8 @@
 body{
 	/*E padding alinea el body con el nav fixed*/
 	padding-top: 50px;
+	background-color: #EEE;
+}
+.container div.row{
+	background-color: #FFF;
 }

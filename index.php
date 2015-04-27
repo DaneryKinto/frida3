@@ -45,13 +45,21 @@
 			    <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 			</div>
 		</div>
-		<div class="container-fluid">
+		<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
 				<h3>Seccion de VIDEOS</h3>
 				<!--ULTIMOS VIDEOS videos importantes vista previa y descripcion-->
 			</div>
-			
+			<div class="col-lg-8">
+				<h4>Primer Video</h4>
+				<div class="embed-responsive embed-responsive-4by3">
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/oduoQVYTOfE" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<h5>Videos relacionados</h5>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
