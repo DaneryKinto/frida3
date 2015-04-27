@@ -39,12 +39,12 @@
 						<li><a href="noticias.php">Noticas</a></li>
 						<li><a href="admin.php">Administrador</a></li>
 						<li class="dropdown">
-							<a href="diccionario.php" class="dropdown-toggle" data-toggle="dropdown">Diccionario <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Por abecedario</a></li>
-								<li><a href="#">Por categorías</a></li>
-							</ul>
-						</li>
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Diccionarios <span class="caret"></span></a>
+				          <ul class="dropdown-menu" role="menu">
+				            <li><a href="diccionario.php">Por abedario</a></li>
+				            <li><a href="categoria.php">Por categoría</a></li>
+				          </ul>
+				        </li>
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
