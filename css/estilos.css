@@ -13,3 +13,11 @@ body{
 .container div.row{
 	background-color: #FFF;
 }
+/*barra de navegacion------------------------------------------*/
+.navbar-collapse{
+	border-bottom: 1px solid #DDD;
+}
+.navlog{
+	border: 0px solid #333;
+	display: none;
+}

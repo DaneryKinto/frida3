@@ -19,8 +19,8 @@
 </head>
 <body>
 		
+	<div class="container-fluid">
 	<nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -54,11 +54,31 @@
 	        <button type="submit" class="btn btn-default">Buscar</button>
 	      </form>
 	      <ul class="nav navbar-nav navbar-right">
-	        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "admin.php" ? "active" : "")?>><a href="admin.php">Administrar</a></li>
+	        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "admin.php" ? "active" : "")?>>
+
+	        	<a href="admin.php" id=<?php 
+	    	if(!isset($_SESSION)){
+	    		echo "no-login";
+
+	    	}
+	    	 ?> >Administrar</a>
+
+	        </li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	    <div id="resultado">
 	    	
 	    </div>
+	    <div>
+	    	<?php 
+	    	if(isset($_SESSION)){
+	    		echo "inicio";
+
+	    	}
+	    	 ?>
+	    </div>
+	    <div class="navlog col-lg-4	bg-primary" id="login">
+	    	<h4>login</h4>
+	    </div>
+		</nav>		
 	  </div><!-- /.container-fluid -->
-	</nav>		

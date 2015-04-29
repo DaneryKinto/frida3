@@ -4,6 +4,8 @@ $(document).ready(function(){
 		
 		//si preciona una tecla 
 		$('#buscador-nav').keyup(function(e){
+		$('#resultado').show('fast');
+		$('#login').hide('fast');	
 		var consulta=$(this).val();
 		$.ajax({
 			type:"POST",
@@ -14,7 +16,7 @@ $(document).ready(function(){
 				$('#resultado').html('<img src="img/cargar.png">');
 			},
 			error: function(){
-				alert("error");
+				$('#resultado').html('<p>Error en la vista previa, haga click en buscar</p>');
 			},
 			success: function(data){
 				$('#resultado').empty();
@@ -22,5 +24,15 @@ $(document).ready(function(){
 			}
 		});
 	});
+
+	//si no se inicion sesión el boton administrar tiene un id=no-login
+	$('#no-login').on('click',function(e){
+		//cuando hacemos click en administrar
+		//detenemos el enlace
+		e.preventDefault();
+		$('#resultado').hide('fast');
+		$("#login").toggle('fast');
+	});
 	}
+
 });
