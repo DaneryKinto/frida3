@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	//Si la resolucion es mayor a 800px el buscador muestra una vista previa
-	if($(window).width()>=1024){
-		alert("hola");
+	if($(window).width()>=800){
+		
 		//si preciona una tecla 
 		$('#buscador-nav').keyup(function(e){
 		var consulta=$(this).val();
