@@ -77,7 +77,7 @@
 	    	}
 	    	 ?>
 	    </div>
-	    <div class="navlog col-lg-4	bg-primary" id="login">
+	    <div class="navlog col-lg-4	col-ms-4 bg-primary" id="login">
 	    	<h4>login</h4>
 	    </div>
 		</nav>		
