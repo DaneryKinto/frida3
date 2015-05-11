@@ -13,11 +13,19 @@
 		     //cuantos resultados voy a mostrar
 		    $registros=2;
 		    //controlo el inicio de los resultado
-            $quemostrar=$_GET['quemostrar'];
+		    if(isset($_GET['quemostrar'])){
+            	$quemostrar=$_GET['quemostrar'];
+            }else{
+            	$quemostrar="todas";
+            }
             //mostrar todas las categoria
 			if($quemostrar=="todas"){
 				//pagina en la que estoy
-				$pagina=$_GET['num'];
+				if(isset($_GET['num'])){
+					$pagina=$_GET['num'];
+				}else{
+					$pagina=1;
+				}
 				//en donde inicio
 				$inicio=($pagina-1)*$registros;
 				//cuantos registros tenemos
@@ -52,7 +60,11 @@
 			 //mostrar noticias sobre comunidad lsa
 			}else if($quemostrar=="lsa"){
 				//pagina en la que estoy
-				$pagina=$_GET['num'];
+				if(isset($_GET['num'])){
+					$pagina=$_GET['num'];
+				}else{
+					$pagina=1;
+				}
 				//en donde inicio
 				$inicio=($pagina-1)*$registros;
 				//numero total de registros
@@ -85,7 +97,11 @@
 			//mostrar noticias de interes general
 			}else if($quemostrar=="gen"){
 				//pagina en la que estoy
-				$pagina=$_GET['num'];
+				if(isset($_GET['num'])){
+					$pagina=$_GET['num'];
+				}else{
+					$pagina=1;
+				}
 				//en donde inicio
 				$inicio=($pagina-1)*$registros;
 				//numero total de registros
