@@ -20,7 +20,7 @@
 			    </thead>
 			    <tbody>
 			        <?php  
-			         	conectar();
+			         	$enlace=conectar();
 			         	// Pedimos el nombre de la página ej: index.php.
 			         	$url = basename($_SERVER ["PHP_SELF"]);
 
@@ -47,12 +47,12 @@
 						$pag_prox = $ini +1;
 
 						// Segunda consulta para mostrar los resultados ordenados segun el usuario
-						$consulta2 = "SELECT * FROM paginas ORDER BY ".$orden." LIMIT ".$inicio.",".$final.""; 
+						$consulta2 = "SELECT * FROM paginas LIMIT '$inicio','$final'"; 
 						$resultado2 = mysqli_query($enlace,$consulta2);
-						echo "Este es el resultado2";
+						print_r($resultado2);
 						
 						// Mostramos todos los datos.
-						while($nuevos = mysqli_fetch_array($resultado2))
+						while($nuevos = mysqli_fetch_array($resultado1))
 						{
 							echo"<tr>
 						    <td>".$nuevos['id']."</td>

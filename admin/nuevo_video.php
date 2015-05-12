@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4 container well">
 
-          <form action="../php/Subir_Videos" method="POST" role="form">
+          <form action="../admin/ABM_Video.php" method="POST" role="form" enctype="multipart/form-data">
               <legend>Nuevo video</legend>
               
               <!--  NUeva palabra -->
@@ -36,7 +36,9 @@
               </div>
 
               <!-- Falta categoría -->
-              
+              <label for="catenew"></label>
+              <input type="text" name="categoria">
+
               <button type="submit" class="btn btn-primary">Subir</button>
               <button type="reset" class="btn btn-primary">Borrar campos</button>
 

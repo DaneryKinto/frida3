@@ -72,13 +72,19 @@
 	    <div>
 	    	<?php 
 	    	if(isset($_SESSION)){
-	    		echo "inicio";
+	    		echo "HOLA ADMIN";
 
 	    	}
 	    	 ?>
 	    </div>
-	    <div class="navlog col-lg-4	col-ms-4 bg-primary" id="login">
-	    	<h4>login</h4>
+	    <div class="navlog col-lg-6 col-lg-offset-3	col-ms-6 bg-primary" id="login">
+	    	
+	    	<form class="navbar-form" method="post" action="php/login.php">
+	    		<label for="usuario" class="col-sm-2"></label>
+	    		<input type="text" name="usuario" id="usuario" class="form-control" required="required" placeholder="Usuario">
+	    		<input type="password" name="pass" id="input" class="form-control" required="required" placeholder="Contraseña">
+	    		<button type="submit" class="btn btn-default">Ingresar</button>
+	    	</form>
 	    </div>
 		</nav>		
 	  </div><!-- /.container-fluid -->

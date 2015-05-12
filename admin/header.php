@@ -72,13 +72,19 @@
 	    <div>
 	    	<?php 
 	    	if(isset($_SESSION)){
-	    		echo "inicio";
+	    		echo "<div>ADMIN</div>";
 
 	    	}
 	    	 ?>
 	    </div>
 	    <div class="navlog col-lg-4	bg-primary" id="login">
-	    	<h4>login</h4>
+	    	<h4>administr</h4>
+	    	<form class="navbar-form">
+	    		<label for="usuario" class="col-sm-2">Usuario</label>
+	    		<input type="text" name="usuario" id="usuario" class="form-control" required="required" title="">
+	    		<input type="password" name="pass" id="input" class="form-control" required="required" title="">
+	    		<button type="submit" class="btn btn-default">Ingresar</button>
+	    	</form>
 	    </div>
 		</nav>		
 	  </div><!-- /.container-fluid -->
