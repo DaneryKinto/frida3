@@ -4,7 +4,7 @@
 	{
 		$host = "localhost";
 		$user = "root";
-		$pass = "vertrigo";
+		$pass = "";
 		$base = "guorpres";
 		$enlace = mysqli_connect($host, $user, $pass, $base);
 		//or die("Error al conectarse a la base de datos");
