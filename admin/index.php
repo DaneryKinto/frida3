@@ -20,7 +20,7 @@
 			    </thead>
 			    <tbody>
 			        <?php  
-			         	conectar();
+			         	$enlace = conectar();
 			         	// Pedimos el nombre de la página ej: index.php.
 			         	$url = basename($_SERVER ["PHP_SELF"]);
 
@@ -72,21 +72,21 @@
 								for ($i=1; $i <= $num_paginas; $i++) { 
 						    		if($i == 1)
 						    		{
-						        		echo "<li><a href='?pagina=".$i."'>Principio</a></li>";
+						        		echo "<li><a href='".$url."?pagina=".$i."'>Principio</a></li>";
 						    			if($pag_ant != 0){ 
-						    				echo "<li><a href='?pagina=".$pag_ant."'><<</a></li>";
+						    				echo "<li><a href='".$url."?pagina=".$pag_ant."'><<</a></li>";
 						    			}
 						    		}
 						    		if($i == 1 || $i == $num_paginas - 1 || ($i >= $ini - 4 && $i <= $ini + 4))
 						    		{
-						        		echo "<li><a href='?pagina=".$i."'>".$i."</a></li>";
+						        		echo "<li><a href='".$url."?pagina=".$i."'>".$i."</a></li>";
 						    		}
 						    		if($i == $num_paginas)
 						    		{
 						    			if($pag_prox <= $num_paginas){
-						        			echo "<li><a href='?pagina=".$pag_prox."'>>></a></li>";
+						        			echo "<li><a href='".$url."?pagina=".$pag_prox."'>>></a></li>";
 						        		}
-						        		echo "<li><a href='?pagina=".$i."'>Final</a></li>";
+						        		echo "<li><a href='".$url."?pagina=".$i."'>Final</a></li>";
 						    		}
 						    	}
 					echo "</ul>
