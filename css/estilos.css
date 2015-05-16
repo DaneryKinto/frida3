@@ -13,7 +13,8 @@ body{
 .container div.row{
 	background-color: #FFF;
 }
-/*barra de navegacion------------------------------------------*/
+
+/* navbar */
 .navbar-collapse{
 	border-bottom: 1px solid #DDD;
 }
@@ -21,3 +22,4 @@ body{
 	border: 0px solid #333;
 	display: none;
 }
+/* fin navbar */
