@@ -4,6 +4,12 @@
 	height: auto;
 }
 
+/* carousel */
+.row.well {
+  padding: 0;
+}
+/* fin carousel */
+
 /* servicios */
 .services .row .col-xs-12:first-child {
 	margin-bottom: 20px;

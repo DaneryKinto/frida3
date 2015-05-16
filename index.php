@@ -29,12 +29,6 @@
 ?>
 <!-- fin seccion videos -->
 
-<!-- inicio seccion categorias -->
-<?php
-	include("php/home/categorias.php");
-?>
-<!-- fin seccion categorias -->
-
 <!-- inicio seccion newsletter -->
 <?php
 	include("php/home/newsletter.php");
