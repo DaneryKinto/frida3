@@ -248,7 +248,7 @@
 													<br>-Inclusión de Intérpretes en Lengua de Señas en clase
 													<br>-Seguimiento del Equipo de Profesionales - Tutoría
 											</h5>								
-											<p class="text-right"><a class="btn btn-flat btn-theme" href="#">Leer màs</a></p>
+											
 										</div>
 									</div>
 								</div>
@@ -269,7 +269,7 @@
 											<br>-Paseos- Actividades Recreativas y Culturales
 											<br>-Talleres de Prevención de Adicciones
 											</h4>
-											<p class="text-right"><a class="btn btn-flat btn-theme" href="#">Leer màs</a></p>
+											
 										</div>
 									</div>
 								</div>
