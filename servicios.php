@@ -26,7 +26,7 @@
                                         <div class="caption">
                                             <h5><a href="#">Nuestros servicios a la comunidad</a></h5>
                                             <p>Nuestra institucion realiza labores de enseñanza, colaboracion, contencion y propagacion de la informacion para el conocimiento sobre los derechos de las personas sordomudas</p>
-                                            <p class="text-right"><a class="btn btn-flat btn-theme" href="#">Leer màs</a></p>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -40,7 +40,7 @@
                                         <div class="caption">
                                             <h5><a href="#">Nuestro Diccionario</a></h5>
                                             <p>Este diccionario virtual es una ayuda y apoyo para todas aquellas personas interesadas en aprender o reforzar la lengua de señas Argentina</p>
-                                            <p class="text-right"><a class="btn btn-flat btn-theme" href="#">Leer màs</a></p>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                         <div class="caption">
                                             <h5><a href="#">Galeria de imagenes educativas</a></h5>
                                             <p>Aca Podras encontrar una gran cantidad de imagenes ilustrativas sobre la lengua de señas argentinas realizadas por nuestros integrantes de trabajo</p>
-                                            <p class="text-right"><a class="btn btn-flat btn-theme" href="#">Leer màs</a></p>
+                                           
                                         </div>
                                     </div>
                                 </div>
