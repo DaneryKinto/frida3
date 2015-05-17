@@ -36,14 +36,14 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	      	<!--en los class de cada li el codigo php detecta la direccion y muestra activo el enlace según corresponda-->
-	        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "index.php" ? "active" : "")?>><a href="index.php">Inicio<span class="sr-only">(current)</span></a></li>
-	        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "servicios.php" ? "active" : "")?>><a href="servicios.php">Servicios</a></li>
-	        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "noticias.php" ? "active" : "")?>><a href="noticias.php">Noticias</a></li>
+	        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "index.php" ? "active" : "")?>><a href="../index.php">Inicio<span class="sr-only">(current)</span></a></li>
+	        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "servicios.php" ? "active" : "")?>><a href="../servicios.php">Servicios</a></li>
+	        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "noticias.php" ? "active" : "")?>><a href="../noticias.php">Noticias</a></li>
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
-	            <li><a href="abecedario.php">Por abecedario</a></li>
-	            <li><a href="categorias.php">Por categoría</a></li>
+	            <li><a href="../abecedario.php">Por abecedario</a></li>
+	            <li><a href="../categorias.php">Por categoría</a></li>
 	          </ul>
 	        </li>
 	      </ul>

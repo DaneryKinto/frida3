@@ -38,18 +38,19 @@
 						$consulta1 = "SELECT * FROM paginas";
 						$resultado1 = mysqli_query($enlace,$consulta1);
 						$num_post = mysqli_num_rows($resultado1);
-						
+						print_r($resultado1);
 						// Número de resultados a mostrar y numero de paginas.
-						$final = 1;
+						$final = 2;
 						$inicio = ($ini -1) * $final;
 						$num_paginas = ceil($num_post / $final);
 						$pag_ant = $ini - 1;
 						$pag_prox = $ini +1;
 
 						// Segunda consulta para mostrar los resultados ordenados segun el usuario
-						$consulta2 = "SELECT * FROM paginas LIMIT '$inicio','$final'"; 
+						$consulta2 = "SELECT * FROM paginas LIMIT $inicio,$final"; 
 						$resultado2 = mysqli_query($enlace,$consulta2);
-						//print_r($resultado2);
+						echo $consulta2;
+						print_r($resultado2);
 						
 						// Mostramos todos los datos.
 						while($nuevos = mysqli_fetch_array($resultado2))
