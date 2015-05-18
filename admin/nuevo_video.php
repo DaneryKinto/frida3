@@ -35,11 +35,6 @@
                   <textarea rows="3" cols="32" class="form-control" name="des_video" id="des_video" placeholder="Pequeño texto descriptivo del video"></textarea> 
               </div>
 
-              <!-- Falta categoría -->
-              <label for="catenew"></label>
-              <input type="text" name="categoria">
-
-
               <!-- categoría -->
               <div class="form-group">
                   <label for="categoria">Categoría</label>
