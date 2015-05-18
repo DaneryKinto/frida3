@@ -34,30 +34,17 @@
             		$conexion = conectar();
             		// Hacemos la consulta.
 
-            		$consulta = "INSERT INTO paginas (fecha, palabra, imagen, alt, video, d_video, categoria) VALUES ('$fecha', '$palabra', '$nombre', '$alt', '$url', '$dvideo', '$categoria')";
+            		$consulta = "INSERT INTO paginas (fecha, palabra, imagen, alt, video, d_video, categoria) VALUES ('$fecha', '$palabra', '$nombre', '$alt', '$url[1]', '$dvideo', '$categoria')";
             		$resultado = mysqli_query($conexion, $consulta);
+                   // print_r($conexion);
+                    print_r($resultado);
             		//Si ocurre un error en la consulta.
-            		if(!$consulta=mysqli_query($conexion,$consulta)){ 
+            		if(!isset($resultado)){ 
                 		echo "<div class='alert alert-warning text-center' role='alert'>Error al subir el archivo 1 Vuelve a intentar<br> 
                  		<span class='label label-warning'><a href='../admin/subirvideo.php'>Regresar</a></span></div>";
             		} else{
                 		//subido correctamente
                         header("location:index.php?action=subido");
-            		}
-        		}   
-    		}else{
-        		echo "<div class='alert alert-warning text-center' role='alert'>Error al subir el archivo 2 Vuelve a intentar<br> "
-            		$consulta = "INSERT INTO paginas (fecha, palabra, imagen, alt, video, d_video, categoria) VALUES ('$fecha', '$palabra', '$nombre', '$alt', '$url[1]', '$dvideo', '$categoria')";
-            		$resultado = mysqli_query($conexion, $consulta);
-            		print_r($resultado);
-            		//Si ocurre un error en la consulta.
-            		if(!$consulta=mysqli_query($conexion,$consulta)){ 
-                		echo "<div class='alert alert-warning text-center' role='alert'>Error al subir el archivo1 Vuelve a intentar<br> 
-                 		<span class='label label-warning'><a href='../admin/subirvideo.php'>Regresar</a></span></div>";
-            		} else{
-                		echo "<div class='alert alert-success text-center' role='alert'>Los datos se ingresaron perfectamente<br>
-                    	<span class='label label-success'><a href='../admin/subirvideo.php'>Subir otro contenido</a></span>"."    "."<span class='label label-success'><a href='../index.php'>Ir a la pagina de usuario</a></span></div>" ;
-            			echo $fecha;
             		}
         		}   
     		}else{
