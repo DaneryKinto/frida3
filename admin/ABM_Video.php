@@ -16,7 +16,6 @@
     $nombretemp = $_FILES['imagen']['tmp_name'];
     $tipoimg = strtolower($_FILES['imagen']['type']);
     $direccion = "../img/subidas/$nombre";
-    $direccion = "../img/$nombre";
 
     //FALTA COMPROBAR QUE EL NOMBRE DEL VIDEO Y LA URL NO SE REPITAN
 

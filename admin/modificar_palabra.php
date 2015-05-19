@@ -10,40 +10,45 @@ if (isset($_GET['palabra'])) {
 	$resultado_modificar = mysqli_query($conexion,$modificar);
 ?>
  	<div class="col-lg-8">
-				<form enctype="multipart/form-data" action="../php/palabra_modificada.php" method="POST" role="form" class="col-md-5 up">
+				<form enctype="multipart/form-data" action="../php/palabra_modificada.php" method="POST" role="form">
 					<legend>Modificar contenido</legend>
 				    <?php 
 				    while($modificar= mysqli_fetch_array($resultado_modificar)){
-                    echo   "<div class='form-group'>
-								<label for='palabra'>Palabra:</label>
-								<input type='text' class='form-control' name='palabra' id='palabra' value='".$modificar['palabra']."'>
-								<input type='hidden' name='id_pal' value='".$modificar['id']."'/ >
-							</div>
-							
-							<div class='form-group'>
-								<label for='img'>Imagen:</label>
-								<input type='file' class='form-control' name='img' id='img' value='".$modificar['imagen']."'>
-							</div>
+                    	echo   "<!--  NUeva palabra -->
+				              	<div class='form-group'>
+				                  <label for='palabra'>Palabra</label>
+				                  <input type='text' class='form-control' id='palabra' autofocus name='palabra' placeholder='Nombre de la palabra a publicar'
+				                  value='".$modificar['palabra']."'>
+				                  <input type='hidden' name='id' value='$palabra' />
+				              	</div>
 
-							<div class='form-group'>
-								<label for='alt'>Titulo alternetivo (imagen):</label>
-								<input type='text' class='form-control' name='alt' id='alt' value='".$modificar['alt']."'>
-							</div>
+				              	<!-- Titlulo alternativo de la imagen -->
+				              	<div class='form-group'>
+				                  <label for='alt'>Descripción de la imagen</label>
+				                  <input type='text' class='form-control' name='alt' id='alt' placeholder='Una pequña descripcion de la imagen'
+				                  value='".$modificar['alt']."'>
+				              	</div>
+				          
+				             	 <!-- URL del video -->
+				              	<div class='form-group'>
+				                  <label for='url'>Video</label>
+				                  <input type='text' class='form-control' name='url' id='url' placeholder='Ej: https://www.youtube.com/watch?v=5ycILaRB3b4'
+				                  value='".$modificar['video']."'>
+				             	 </div>
 
-							<div class='form-group'>
-								<label for='video'>Video:</label>
-								<input type='text' class='form-control' name='video' id='video' value='".$modificar['video']."'>
-							</div>
-							
-							<div class='form-group'>
-								<label for='dvideo'>Descripción del video:</label>
-								<input type='text' class='form-control' id='dvideo' name='dvideo' value='".$modificar['d_video']."'>
-							</div>
-							
-							<div class='form-group'>
-								<label for='categoria'>Categoría:</label>
-								<input type='text' class='form-control' id='categoria' name='categoria' value='".$modificar['categoria']."'>
-							</div>";}     
+				             	 <!-- Descripcion del video -->
+				            	  <div class='form-group'>
+				                  <label for='des_video'>Descripción del video</label>
+				                  <textarea rows='3' cols='32' class='form-control' name='des_video' id='des_video' placeholder='Pequeño texto descriptivo del video'
+				                  value='".$modificar['d_video']."'></textarea> 
+				             	 </div>
+
+				             	 <!-- categoría -->
+				             	 <div class='form-group'>
+				                  <label for='categoria'>Categoría</label>
+				                  <input type='text' class='form-control' name='categoria' id='categoria' value='".$modificar['categoria']."'>
+				             	 </div>";
+				    }     
 				    ?>							
 					<button type="submit" class="btn btn-primary">Guardar cambios</button>
 					<button type="button" class="btn btn-primary" onclick="history.back()">Cancelar</button>
