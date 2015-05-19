@@ -4,7 +4,11 @@
 	<div class="col-xs-12 col-lg-12">
 		<div class='panel panel-default'>
 			<div class='panel-heading'>
-			   	<h3 class='panel-title'>Videos subidos</h3>
+			   	<h3 class='panel-title'>
+			   		Videos subidos 
+			   		<a class="btn btn-default" href="nuevo_video.php" role="button">Agregar video</a>
+
+			   	</h3>
 			</div>
 			<div class='panel-body'>
 				<table class="table table-striped">
@@ -38,9 +42,8 @@
 						$consulta1 = "SELECT * FROM paginas";
 						$resultado1 = mysqli_query($enlace,$consulta1);
 						$num_post = mysqli_num_rows($resultado1);
-						print_r($resultado1);
 						// Número de resultados a mostrar y numero de paginas.
-						$final = 2;
+						$final = 10;
 						$inicio = ($ini -1) * $final;
 						$num_paginas = ceil($num_post / $final);
 						$pag_ant = $ini - 1;
@@ -49,8 +52,6 @@
 						// Segunda consulta para mostrar los resultados ordenados segun el usuario
 						$consulta2 = "SELECT * FROM paginas LIMIT $inicio,$final"; 
 						$resultado2 = mysqli_query($enlace,$consulta2);
-						echo $consulta2;
-						print_r($resultado2);
 						
 						// Mostramos todos los datos.
 						while($nuevos = mysqli_fetch_array($resultado2))
