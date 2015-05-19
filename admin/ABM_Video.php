@@ -16,7 +16,6 @@
     $nombretemp = $_FILES['imagen']['tmp_name'];
     $tipoimg = strtolower($_FILES['imagen']['type']);
     $direccion = "../img/subidas/$nombre";
-    $direccion = "../img/$nombre";
 
     // Comprobamos que el tamaño de imagen no pase de los 400kb, 409600 bytes.
     if ($tamanioimg > 409600){
