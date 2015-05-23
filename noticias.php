@@ -45,26 +45,26 @@
             	//mostrar
             	while($filas=mysqli_fetch_array($mostrar)){
 				    if($filas['categoria']=="Sobre Comunidad LSA"){
-                        echo '<br>'.$filas['titulo'].'<pre><i>'.$filas['fecha'].'  -  <a href="">'.$filas['categoria'].'</a></i></pre><br>'.$filas['contenido'];
+                        echo '<br>'.$filas['titulo'].'<pre><i>'.$filas['fecha'].'  -  <a href="noticias.php?quemostrar=lsa&num=1">'.$filas['categoria'].'</a></i></pre><br>'.$filas['contenido'];
                     }else if($filas['categoria']=="Interés General"){
-                        echo '<br>'.$filas['titulo'].'<pre><i>'.$filas['fecha'].'  -  <a href="">'.$filas['categoria'].'</a></i></pre><br>'.$filas['contenido'];
+                        echo '<br>'.$filas['titulo'].'<pre><i>'.$filas['fecha'].'  -  <a href="noticias.php?quemostrar=gennum=1">'.$filas['categoria'].'</a></i></pre><br>'.$filas['contenido'];
                     }
 			    }
 			    //dibujo los enlaces a mas resultados
                 echo '<br><br><br>Mostrando resultados página : <br>';
                 if($pagina>1){
-                	echo ' <a href="noticias.php?quemostrar=todas&num='.($pagina-1).'"> <<< Anterior - </a> ';
+                	echo ' <a href="noticias.php?quemostrar='.$quemostrar.'&num='.($pagina-1).'"> <<< Anterior - </a> ';
                 }
 			    for($i=1;$i<=$num_paginas;$i++){
 			    	//no creo el enlace a la pagina en la que ya estoy
 			    	if($i==$pagina){
 			    		echo $i.' - ';
 			    	}else{
-			    	   	echo '<a href="noticias.php?quemostrar=todas&num='.$i.'">'.$i.' - </a> ';
+			    	   	echo '<a href="noticias.php?quemostrar='.$quemostrar.'&num='.$i.'">'.$i.' - </a> ';
 			    	}
 			    }
 			    if($pagina<$num_paginas){
-			    	echo ' <a href="noticias.php?quemostrar=todas&num='.($pagina+1).'"> Siguiente >>></a> ';
+			    	echo ' <a href="noticias.php?quemostrar='.$quemostrar.'&num='.($pagina+1).'"> Siguiente >>></a> ';
 			    }
 			 
 			?>
