@@ -78,7 +78,7 @@
 	    	}
 	    	 ?>
 	    </div>
-	    <div class="navlog col-lg-6 col-lg-offset-3	col-ms-6 bg-primary" id="login">
+	    <div class="navlog col-lg-6 col-lg-offset-3	col-ms-6" id="login">
 	    	
 	    	<form class="navbar-form" method="post" action="php/login.php">
 	    		<label for="usuario" class="col-sm-2"></label>

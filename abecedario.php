@@ -7,6 +7,7 @@
 ?>
     <!--Contenido de la página de inicio.-->
     <!-- Aceso a videos del sitio a travez de un abecedario.-->
+    <div class="container-fluid">
     <div class="col-xs-12 col-md-8 ">
         <div class='panel panel-default'>
             <div class='panel-heading'>
@@ -51,7 +52,8 @@
             </div>
         </div>
     </div>
+    </div>
 <!-- Este es el pie de pagina -->
-		<?php
-			include("php/partes/footer.php");
-		?>
+        <?php
+            include("php/partes/footer.php");
+        ?>
