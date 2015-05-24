@@ -2,10 +2,10 @@
 -- version 4.0.9
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 11-05-2015 a las 02:46:50
--- Versión del servidor: 5.5.34
--- Versión de PHP: 5.3.27
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 24-05-2015 a las 14:45:43
+-- Versión del servidor: 5.6.14
+-- Versión de PHP: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `guorpres`
+-- Base de datos: `guorpresnueva`
 --
 
 -- --------------------------------------------------------
@@ -61,28 +61,39 @@ CREATE TABLE IF NOT EXISTS `paginas` (
   `d_video` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `categoria` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `usuario` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fecha` bigint(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
 
 --
 -- Volcado de datos para la tabla `paginas`
 --
 
 INSERT INTO `paginas` (`id`, `palabra`, `imagen`, `alt`, `video`, `d_video`, `categoria`, `usuario`, `fecha`) VALUES
-(2, 'cielo', '', '', 'Tj-CQD5Ek4I', '', '', '', '0000-00-00 00:00:00'),
-(3, 'c', '', '', 'YzUYap6IbTE', '', '', '', '0000-00-00 00:00:00'),
-(4, 'brasil', '', '', 'tHxDTf-Z63Y', '', '', '', '0000-00-00 00:00:00'),
-(5, 'b', '', '', 'nyyRkTU-TFA', '', '', '', '0000-00-00 00:00:00'),
-(6, 'calor', '', '', 't_w_oxnm8_8', '', '', '', '0000-00-00 00:00:00'),
-(7, 'bueno', '', '', 'A1RjqJMyuqU', '', '', '', '0000-00-00 00:00:00'),
-(8, 'azul', '', '', 'J2kpq-NMAKU', '', '', '', '0000-00-00 00:00:00'),
-(9, 'alegria', '', '', 'eaTHP5DNeio', '', '', '', '0000-00-00 00:00:00'),
-(10, 'corazon', '', '', 'NkWbJ_xNnkQ', '', '', '', '0000-00-00 00:00:00'),
-(11, 'correr', '', '', 'K_tHP9_N8TA', '', '', '', '0000-00-00 00:00:00'),
-(12, 'a', '', '', 'TIXxJwA3bfI', '', '', '', '0000-00-00 00:00:00'),
-(13, 'saludo', '', '', 'JYabh2lKaSY', '', '', '', '0000-00-00 00:00:00'),
-(14, 'azucar', '', '', '6A-P5B2FEFU', '', '', '', '0000-00-00 00:00:00');
+(2, 'cielo', '', '', 'Tj-CQD5Ek4I', '', '', '', 0),
+(3, 'c', '', '', 'YzUYap6IbTE', '', '', '', 0),
+(4, 'brasil', '', '', 'tHxDTf-Z63Y', '', '', '', 0),
+(5, 'b', '', '', 'nyyRkTU-TFA', '', '', '', 0),
+(6, 'calor', '', '', 't_w_oxnm8_8', '', '', '', 0),
+(7, 'bueno', '', '', 'A1RjqJMyuqU', '', '', '', 0),
+(8, 'azul', '', '', 'J2kpq-NMAKU', '', '', '', 0),
+(9, 'alegria', '', '', 'eaTHP5DNeio', '', '', '', 0),
+(10, 'corazon', '', '', 'NkWbJ_xNnkQ', '', '', '', 0),
+(11, 'correr', '', '', 'K_tHP9_N8TA', '', '', '', 0),
+(12, 'a', '', '', 'TIXxJwA3bfI', '', '', '', 0),
+(13, 'saludo', '', '', 'JYabh2lKaSY', '', '', '', 0),
+(14, 'azucar', '', '', '6A-P5B2FEFU', '', '', '', 0),
+(15, 'asdasda', '088gdea.jpg', 'qwe', 'https://www.youtube.com/watch?v=lWXBkR7PO0o', 'qweqw', '', '', 1431440328),
+(16, 'asdasda', '088gdea.jpg', 'qwe', 'https://www.youtube.com/watch?v=lWXBkR7PO0o', 'qweqw', '', '', 1431440328),
+(17, 'asdasda', '088gdea.jpg', 'qwe', 'https://www.youtube.com/watch?v=lWXBkR7PO0o', 'qweqw', 'qweqe', '', 1431440464),
+(18, 'asdasda', '088gdea.jpg', 'qwe', 'https://www.youtube.com/watch?v=lWXBkR7PO0o', 'qweqw', 'qweqe', '', 1431440464),
+(19, 'wqewqe', '088gdea.jpg', 'mqwr', 'lWXBkR7PO0o', 'wqnqrwq', 'qiweqwr', '', 1431974448),
+(20, 'wqewqe', '088gdea.jpg', 'mqwr', 'lWXBkR7PO0o', 'wqnqrwq', 'qiweqwr', '', 1431974463),
+(21, 'wqewqe', '088gdea.jpg', 'mqwr', 'lWXBkR7PO0o', 'wqnqrwq', 'qiweqwr', '', 1431974537),
+(22, 'wqewqe', '088gdea.jpg', 'mqwr', 'lWXBkR7PO0o', 'wqnqrwq', 'qiweqwr', '', 1431974573),
+(23, 'monchopowe', '776.jpg', 'masdqw', 'lWXBkR7PO0o', 'mqewwq', 'qweqwe', '', 1432469587),
+(24, 'asdqqw', '776.jpg', 'masdqw', 'lWXBkR7PO0o', 'weqwe', 'wqewqe', '', 1432469619),
+(25, 'asddds', 'Sin tÃ­tulo2.png', 'masdqw', 'lWXBkR7PO0o', 'qwewqe', 'qweqwe', '', 1432469669);
 
 -- --------------------------------------------------------
 
@@ -92,12 +103,10 @@ INSERT INTO `paginas` (`id`, `palabra`, `imagen`, `alt`, `video`, `d_video`, `ca
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `usuario` varchar(24) COLLATE utf8_unicode_ci NOT NULL,
   `contrasena` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `documento` int(8) NOT NULL,
   KEY `id` (`id`),
-  KEY `nombre` (`nombre`),
   KEY `id_2` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
@@ -105,9 +114,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `contrasena`, `documento`) VALUES
-(5, 'Grupo', 'administrador', 'contrasena', 12345678),
-(6, '', 'user', '1234', 0);
+INSERT INTO `usuarios` (`id`, `usuario`, `contrasena`, `documento`) VALUES
+(5, 'administrador', 'contrasena', 12345678),
+(6, 'user', '1234', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
