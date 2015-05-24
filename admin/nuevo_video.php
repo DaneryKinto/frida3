@@ -1,6 +1,33 @@
 <?php include "header.php"; include "../php/funciones.php";?>
     <div class="row">
         <div class="col-lg-4 col-lg-offset-4 container well">
+          <?php 
+            //si existe un error al subir algo se devuelvo con get
+            if(isset($_GET['error'])){
+              switch ($_GET['error']) {
+                case '0':
+                if(isset($_GET['palabra'])){
+                $palabra=$_GET['palabra'];
+                  echo "<div class=bg-danger>
+                  <p>Ya existe un video con el titulo $palabra
+                  <a href=#>haga click aqui para editarlo.</a></p>
+                  </div>";
+                }
+                if(isset($_GET['direccion'])){
+                  $direccion=$_GET['direccion'];
+                  echo "<div class=bg-danger>
+                  <p>Ya existe un video con la misma dirección 
+                    <a href=#>haga click aqui para editarlo.</a></p>
+                  </div>";
+                }
+                  break;
+                
+                default:
+                  # code...
+                  break;
+              }
+            }
+           ?>
           <form action="../admin/ABM_Video.php" method="POST" role="form" enctype="multipart/form-data">
           <form action="ABM_Video.php" method="POST" enctype="multipart/form-data" role="form">
               <legend>Nuevo video</legend>

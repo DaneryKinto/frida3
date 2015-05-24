@@ -19,40 +19,68 @@
 
     //FALTA COMPROBAR QUE EL NOMBRE DEL VIDEO Y LA URL NO SE REPITAN
 
+
     // Comprobamos que el tamaño de imagen no pase de los 400kb, 409600 bytes.
     if ($tamanioimg > 409600){
-        echo "Tu imagen debe ser menor a 400kb";
-        //debe volver a la pagina nuevo-video, error "el archivo es muy grande"
-        $imagensubida = "false";
-    } // Comprobamos el formato de imagenes permitidas.
-    	else if (!( $tipoimg == "image/jpg" OR $tipoimg == "image/gif" OR $tipoimg == "image/jpeg" OR $tipoimg == "image/png")){
+        // error "la imagen pesa demasiado"
+        header('location:nuevo_video-php?error=3');
+    } 
+    // Comprobamos el formato de imagenes permitidas.
+    else{
+     if (!( $tipoimg == "image/jpg" OR $tipoimg == "image/gif" OR $tipoimg == "image/jpeg" OR $tipoimg == "image/png")){
             //debe volver a la pagina nuevo video, error "el formato no es compatible"
-        	echo "Solo se permiten imágenes jpg o gif.";
-    		$imagensubida = "false";
-    	}  // Si la imagen paso las pruebas. 
-    		else if($imagensubida == "true"){
-        		if (move_uploaded_file ( $nombretemp , $direccion)){
-            		// Obtenemos la fecha de creacion del post con la hora del servidor.
-            		$fecha = time();
-            		$conexion = conectar();
-            		// Hacemos la consulta.
+        	header('location:nuevo_video.php?error=2');
+    	}  
+        // Si la imagen paso las pruebas. 
+            else{
 
-            		$consulta = "INSERT INTO paginas (fecha, palabra, imagen, alt, video, d_video, categoria) VALUES ('$fecha', '$palabra', '$nombre', '$alt', '$url[1]', '$dvideo', '$categoria')";
-            		$resultado = mysqli_query($conexion, $consulta);
+            // Obtenemos la fecha de creacion del post con la hora del servidor.
+            $fecha = time();
+            $conexion = conectar();
+            $reg_video="SELECT palabra,video FROM paginas WHERE palabra='$palabra' OR video='$url[1]'";
+            $consul=mysqli_query($conexion,$reg_video);
+                if(mysqli_num_rows($consul)==0)
+                {
+                    if (move_uploaded_file ( $nombretemp , $direccion))
+                    {
+                		// Hacemos la consulta.
+                		$consulta = "INSERT INTO paginas (fecha, palabra, imagen, alt, video, d_video, categoria) VALUES ('$fecha', '$palabra', '$nombre', '$alt', '$url[1]', '$dvideo', '$categoria')";
+                		$resultado = mysqli_query($conexion, $consulta);
 
-                    if(!isset($resultado)){ 
-                   		//Si ocurre un error en la consulta, error "no se puedo modificar la base de datos"
-                		echo "<div class='alert alert-warning text-center' role='alert'>Error al subir el archivo 1 Vuelve a intentar<br> 
-                 		<span class='label label-warning'><a href='../admin/subirvideo.php'>Regresar</a></span></div>";
-            		} else{
-                		//subido correctamente
-                        header("location:index.php?action=subido");
+                        if(!isset($resultado)){ 
+                       		//Si ocurre un error en la consulta, error "no se puedo modificar la base de datos"
+                    		header('location:nuevo_video?error=4');
+                		} else{
+                    		//SUBIDO CORRECTAMENTE
+                            header("location:index.php?action=subido");
+                		}
             		}
-        		}   
-    		}else{
-        		echo "<div class='alert alert-warning text-center' role='alert'>Error al subir el archivo2 Vuelve a intentar<br> 
-                <span class='label label-warning'><a href='../admin/subirvideo.php'>Regresar</a></span></div>";
-    		}
+                    else
+                    {
+                    //no se pudo mover el video
+                        header('location:nuevo_video.php?error=1');
+                    }   
+        		}
+                else
+                {
+                    //EL VIDEO YA EXISTE O EL NOMBRE SE REPITE
+                    //le mando al admin la opcion de elegir editar el video que ya existia
+                    while ($registros=mysqli_fetch_array($consul)) {
+                        //busco en todos los registro encontrados
+                        if(isset($registros['palabra'])){
+                            //si la palabra ya existe la mando junto con el error
+                            header('location:nuevo_video.php?error=0&palabra='.$registros["palabra"].'');
+                        }
+                        if(isset($registros['video'])){
+                           //si la palabra ya existe la mando junto con el error
+                            header('location:nuevo_video.php?error=0&direccion='.$registros["video"].'');
+                        }
+                    }
+                    
+                }
+            
+            }
+        }        
 ?>
 
 
