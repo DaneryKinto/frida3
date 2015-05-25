@@ -12,12 +12,12 @@
             //controlo por titulo o contenido si lo que se quiere ingresar no se encuentra ya en la base de datos
                     $yaesta=mysqli_query( $conexion , "SELECT*FROM noticias WHERE contenido LIKE '$contenido' OR '$titulo'");
                     //en caso de que no exista
-                    if(!mysqli_data_seek($yaesta, 0)){
+                    if(!mysqli_fetch_array($yaesta)){
                          //agregar la noticia
                     	 $agregar="INSERT INTO noticias(fecha, titulo, contenido, categoria) VALUES(FROM_UNIXTIME('$fecha'), '$titulo', '$contenido', '$categoria')";
                     	 //si los datos se agregaron correctamente
                         if(mysqli_query( $conexion, $agregar)){
-                           echo '<b>El nuevo contenido se ha cargado correctamente a la base de datos.</b><br><a href="control.php">Volver</a>';
+                           echo '<b>El nuevo contenido se ha cargado correctamente a la base de datos.</b><br><a href="agregar_noticia.php">Volver</a>';
                         }else{
                             //si no se pudieron cargar los datos en la base de datos
                             echo '<b>Error: no se ha podido llevar a cabo la operación.El nuevo contenido no se ha podido cargar a la base de datos.</b><br><a href="agregar_noticia.php">Volver</a>';

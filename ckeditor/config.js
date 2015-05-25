@@ -3,11 +3,8 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
-CKEDITOR.editorConfig = function(config) {
-    config.filebrowserBrowseUrl = '/ckeditor/kcfinder/browse.php';
-    config.filebrowserImageBrowseUrl = '/ckeditor/kcfinder/browse.php?type=images';
-    config.filebrowserFlashBrowseUrl = '/ckeditor/kcfinder/browse.php?type=flash';
-    config.filebrowserUploadUrl = '/ckeditor/kcfinder/upload.php?type=files';
-    config.filebrowserImageUploadUrl = '/ckeditor/kcfinder/upload.php?type=images';
-    config.filebrowserFlashUploadUrl = '/ckeditor/kcfinder/upload.php?type=flash';
+CKEDITOR.editorConfig = function( config ) {
+	// Define changes to default configuration here. For example:
+	config.language = 'es';
+	// config.uiColor = '#AADC6E';
 };
