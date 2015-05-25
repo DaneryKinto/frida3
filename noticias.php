@@ -9,6 +9,13 @@
 			<a href="noticias.php?quemostrar=gen&num=1">Interés General</a><br>
 			</ul>	
 			<?php
+			function dibujar_enlaces($x, $y, $z){
+				if($x==$y){
+					echo $x.' - ';
+				}else{
+					echo '<a href="noticias.php?quemostrar='.$z.'&num='.$x.'">'.$x.' - </a> ';
+				}
+			}
             	$conexion = conectar();
 		    	//cuantos resultados voy a mostrar
 		   		$registros=2;
@@ -50,23 +57,49 @@
                         echo '<br>'.$filas['titulo'].'<pre><i>'.$filas['fecha'].'  -  <a href="noticias.php?quemostrar=gennum=1">'.$filas['categoria'].'</a></i></pre><br>'.$filas['contenido'];
                     }
 			    }
-			    //dibujo los enlaces a mas resultados
-                echo '<br><br><br>Mostrando resultados página : <br>';
-                if($pagina>1){
-                	echo ' <a href="noticias.php?quemostrar='.$quemostrar.'&num='.($pagina-1).'"> <<< Anterior - </a> ';
-                }
-			    for($i=1;$i<=$num_paginas;$i++){
-			    	//no creo el enlace a la pagina en la que ya estoy
-			    	if($i==$pagina){
-			    		echo $i.' - ';
-			    	}else{
-			    	   	echo '<a href="noticias.php?quemostrar='.$quemostrar.'&num='.$i.'">'.$i.' - </a> ';
+			    //cantidad de paginas que muestro en el paginador
+			    $cant=5;
+			    //si no tengo tantas paginas para mostrar como quisiera
+			    if($cant > $num_paginas){
+			    	$cant=$num_paginas;
+			    }
+			    echo $cant."-". $num_paginas;
+			    //dibujo los enlaces a mas resultados solo si tengo mas de una pagina de resultados
+                if($num_paginas>1){
+                	echo '<br><br><br>Mostrando resultados página : <br>';
+                	//si la pagina en la que estoy actualmente no es la primera
+                	if($pagina>1){
+                		echo ' <a href="noticias.php?quemostrar='.$quemostrar.'&num='.($pagina-1).'"> <<< Anterior - </a> ';
+                	}
+                	//si lel numero de pagina en la que estoy es mayor que el numero de paginas que quiero mostrar
+                	if($pagina - $cant>=1){
+                		echo " ... -";
+                		//escribir todo con la funcion
+                		if($pagina + $cant < $num_paginas){
+                			//paginas "intermedias"
+                			for($i=$pagina;$i<= $pagina + $cant; $i++){
+                				dibujar_enlaces($i, $pagina, $quemostrar);
+                			}
+                			echo " ... -";
+                		}else{
+                			//ultimas paginas
+                			for($i=$num_paginas-$cant+1;$i<=$num_paginas;$i++){
+                				dibujar_enlaces($i, $pagina, $quemostrar);
+                			}
+                		}
+                	}else{
+                		//primeras paginas
+                		for($i=1;$i<=$cant;$i++){
+                			dibujar_enlaces($i,$pagina,$quemostrar);
+                		}
+                		if($pagina  < $num_paginas && $cant!=$num_paginas){
+                			echo " ... -";
+                		}
+                	}
+			    	if($pagina < $num_paginas){
+			    		echo ' <a href="noticias.php?quemostrar='.$quemostrar.'&num='.($pagina+1).'"> Siguiente >>></a> ';
 			    	}
 			    }
-			    if($pagina<$num_paginas){
-			    	echo ' <a href="noticias.php?quemostrar='.$quemostrar.'&num='.($pagina+1).'"> Siguiente >>></a> ';
-			    }
-			 
 			?>
 <!-- Este es el pie de pagina -->
 		<?php
