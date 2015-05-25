@@ -17,7 +17,12 @@
     $tipoimg = strtolower($_FILES['imagen']['type']);
     $direccion = "../img/subidas/$nombre";
 
-    //FALTA COMPROBAR QUE EL NOMBRE DEL VIDEO Y LA URL NO SE REPITAN
+    //CODIGO DE ERRORES
+    //0=El nombre del video o la direccion ya existen
+    //1=No se pudo mover la imagen a la carpeta
+    //2=El formato de la imagen no es compatible
+    //3=La imagen pesa demasiado (podriamos rearmar la imagen en el servidor)
+    //4=No se pudo escribir en la base de datos el registro del nuevo video 
 
 
     // Comprobamos que el tamaño de imagen no pase de los 400kb, 409600 bytes.
@@ -37,6 +42,7 @@
             // Obtenemos la fecha de creacion del post con la hora del servidor.
             $fecha = time();
             $conexion = conectar();
+            //Consulto a la BDD si existe algun registro que coincida con el nombre o la direccion del video
             $reg_video="SELECT palabra,video FROM paginas WHERE palabra='$palabra' OR video='$url[1]'";
             $consul=mysqli_query($conexion,$reg_video);
                 if(mysqli_num_rows($consul)==0)
@@ -67,11 +73,11 @@
                     //le mando al admin la opcion de elegir editar el video que ya existia
                     while ($registros=mysqli_fetch_array($consul)) {
                         //busco en todos los registro encontrados
-                        if(isset($registros['palabra'])){
+                        if($registros['palabra']==$palabra){
                             //si la palabra ya existe la mando junto con el error
                             header('location:nuevo_video.php?error=0&palabra='.$registros["palabra"].'');
                         }
-                        if(isset($registros['video'])){
+                        elseif($registros['video']==$url[1]){
                            //si la palabra ya existe la mando junto con el error
                             header('location:nuevo_video.php?error=0&direccion='.$registros["video"].'');
                         }
