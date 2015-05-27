@@ -1,12 +1,10 @@
 <?php
-      include("../php/partes/header.php");
-      include("../php/funciones.php");
-      include("header.php");  
+      include("../php/funciones.php"); 
       $conexion = conectar();    
 		if($_POST['contenidos']!="" && $_POST['titulo']!=""){
             //recojo datos formulario
             $fecha=time();
-            $titulo="<h3>".$_POST['titulo']."</h3>";
+            $titulo=$_POST['titulo'];
             $contenido=$_POST['contenidos'];
             $categoria=$_POST['cate'];
             //controlo por titulo o contenido si lo que se quiere ingresar no se encuentra ya en la base de datos
@@ -17,22 +15,22 @@
                     	 $agregar="INSERT INTO noticias(fecha, titulo, contenido, categoria) VALUES(FROM_UNIXTIME('$fecha'), '$titulo', '$contenido', '$categoria')";
                     	 //si los datos se agregaron correctamente
                         if(mysqli_query( $conexion, $agregar)){
-                           echo '<b>El nuevo contenido se ha cargado correctamente a la base de datos.</b><br><a href="agregar_noticia.php">Volver</a>';
+                          //se envio correctamente
+                           header('location:../admin.php?action=nueva_noticia&value=subido');
                         }else{
                             //si no se pudieron cargar los datos en la base de datos
-                            echo '<b>Error: no se ha podido llevar a cabo la operación.El nuevo contenido no se ha podido cargar a la base de datos.</b><br><a href="agregar_noticia.php">Volver</a>';
+                            header('location:../admin.php?action=nueva_noticia&error=13');
                         }
                     }else{
                     	//si el contenido que se intenta ingresar ya esta en la base de datos
-                    	echo'<b>El titulo o contenido ya existen en la base de datos</b><br><a href="agregar_noticia.php">Volver</a>';
+                    	header('location:../admin.php?action=nueva_noticia&error=12');
                     }
                }else{
                	    if($_POST['titulo']=="")
-               	        echo "<b>No se puede insertar noticia sin titulo.</b>";
+                      //NO tiene titulo
+               	        header('location:../admin.php?action=nueva_noticia&error=10');
                	    if($_POST['contenidos']=="")
-               	        echo "<b>No se puede insertar noticia sin contenido.</b>";
-               	    echo '<br><a href="agregar_noticia.php">Volver</a>';
+                      //no tiene contenido
+               	        header('location:../admin.php?action=nueva_noticia&error=11');
                	}
-//Este es el pie de pagina -->
-      include("../php/partes/footer.php");
 			?>

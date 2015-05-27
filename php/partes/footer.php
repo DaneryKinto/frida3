@@ -1,72 +1,53 @@
-<div class="container-fluid">
-	<footer class="row">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4">
-						<h4>Informacion legal</h4>
+<div class="container-fluid footer">
+	<div class="container">
+				<div class="footer-row well-lg">
+					<div class="col-lg-3">
+						<h4>Comunidad</h4>
 						<div>
-							<p class="italic">Etiam scelerisque, justo id ultricies rutrum, augue nibh gravida erat, nec . Aenean porttitor pretium nulla et volutpat</p>
-							<div class="footer-line"></div>
-							<p>Juan pepe</p>
-							<p class="bold">Diseño</p>
-						</div>						
-					</div>
-					<div class="col-lg-4">
-						<h4>FORMULARIO DE CONTACTO</h4>
-					</div>
-					<div class="col-lg-4 pull-right">
-						<div class="get-in-touch pull-right">
-							<h4>Comunicate con nosotros</h4>
-							
-							<ul class="vcard">
-								<li>
-									<span class="vcard-icon"><i class="icon-home"></i></span>                                                                       
-									<span class="vcard-text">Calle falsa 1234</span>
-								</li>
-								<li>
-									<span class="vcard-icon"><i class="icon-phone"></i></span>                                                                       
-									<span class="vcard-text">1321546546546</span>
-								</li>
-								<li>
-									<span class="vcard-icon"><i class="icon-envelope"></i></span>                                                                       
-									<span class="vcard-text"><a href="#">direccion depagina web</a></span>
-								</li>
-							</ul>
+							<p class="bold">Acerca de Nosotros.</p>
 							<ul class="social-menu">
 								<li class="rss"><a title="Rss Feed" href="rss.php">Rss Feed</a></li>
 								<li class="googleplus"><a title="Google+" href="#">proximamente</a></li>
 								<li class="facebook"><a title="Facebook" href="https://www.facebook.com/comunidad.lsa">Facebook</a></li>
+							</ul>
+							<hr>
+							<ul>
 								<li class="twitter"><a title="Twitter" href="#">proximamente</a></li>
 								<li class="linkedin"><a title="Linked In" href="#">proximamente</a></li>
 								<li class="pinterest"><a title="Pinterest" href="#">proximamente</a></li>
 								<li class="instagram"><a title="Instagram" href="#">proximamente</a></li>
 							</ul>
+						</div>						
+					</div>
+					<div class="col-lg-4">
+						<h5>Contáctenos</h5>
+						<form role="form">
+						  <div class="form-group">
+						    <label for="nombre">Nombre:</label>
+						    <input type="text" class="form-control" id="nombre" name="nombre">
+						  </div>
+						  <div class="form-group">
+						    <label for="email">Direccion de Correo:</label>
+						    <input type="email" class="form-control" id="email" name="correo">
+						  </div>
+						  <div class="form-group">
+						    <label for="mensaje">Mensaje:</label>
+						    <input type="password" class="form-control" id="mensaje" name="mensaje">
+						  </div>
+						  <button type="submit" class="btn btn-default">Submit</button>
+						</form>
+					</div>
+					<div class="col-lg-5 pull-right">
+						<div class="get-in-touch pull-right">
+							<h5>Cómo llegar</h5>
+							
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7121.664671748439!2d-65.2164439984131!3d-26.813466757583257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94223792d6c56903%3A0xf88d5b92b5c56527!2sSan+Miguel+de+Tucum%C3%A1n%2C+Tucum%C3%A1n%2C+Argentina!5e0!3m2!1ses!2s!4v1432710339931" width="400" height="300" frameborder="0" style="border:0"></iframe>
+							
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="verybottom">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-9 centered">
-							<ul class="footer-nav">                            
-								<li class=<?php echo (basename($_SERVER['PHP_SELF']) == "index.php" ? "active" : "")?>><a href="index.php">Inicio<span class="sr-only">(current)</span></a></li>
-						        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "servicios.php" ? "active" : "")?>><a href="servicios.php">Servicios</a></li>
-						        <li class=<?php echo (basename($_SERVER['PHP_SELF']) == "noticias.php" ? "active" : "")?>><a href="noticias.php?quemostrar=todas&num=1">Noticias</a></li>
-								<li><a href="#">Diccionario junior</a></li>
-								<li><a href="#">Diccionario senior</a></li>
-							</ul>
-						</div>
-						<div class="col-lg-3 pull-right">
-							<p class="pull-right copy-right">
-								&copy; 2015 UNT 
-							</p>
-						</div>
-					</div>
 				</div>
 			</div>
-	</footer>		
-</div>
 	<!-- Javascript -->
 	<script src="js/jquery.min.js" type="text/Javascript"></script>
 	<script src="js/code.js" type="text/Javascript"></script>
@@ -80,5 +61,5 @@
   <script src="js/reduce-menu.js"></script>
   <script src="js/match-height.js"></script>
   <script type="text/javascript">
-</body>
+</body> 
 </html>

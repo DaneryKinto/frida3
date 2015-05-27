@@ -29,12 +29,6 @@
 ?>
 <!-- fin seccion videos -->
 
-<!-- inicio seccion newsletter -->
-<?php
-	include("php/home/newsletter.php");
-?>
-<!-- fin seccion newsletter -->
-
 <!-- Este es el pie de pagina -->
 <?php
 	include("php/partes/footer.php");

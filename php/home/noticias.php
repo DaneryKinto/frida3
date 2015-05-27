@@ -2,7 +2,7 @@
 	<div class="container">
 		<section class="noticias blog-post pull-left">
 		  <div class="row">
-
+			<h2>Novedades</h2>
 		    <article class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 		      <div class="r-post b-post not-right-bdr">
 						<div class="r-post-img">

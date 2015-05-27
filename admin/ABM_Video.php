@@ -1,4 +1,4 @@
-<?php include "../php/funciones.php";
+    <?php include "../php/funciones.php";
 
 // Compramos la sesion. (Faltante).
 
@@ -28,13 +28,13 @@
     // Comprobamos que el tamaño de imagen no pase de los 400kb, 409600 bytes.
     if ($tamanioimg > 409600){
         // error "la imagen pesa demasiado"
-        header('location:nuevo_video-php?error=3');
+        header('location:../admin.php?action=nuevo_video&error=3');
     } 
     // Comprobamos el formato de imagenes permitidas.
     else{
      if (!( $tipoimg == "image/jpg" OR $tipoimg == "image/gif" OR $tipoimg == "image/jpeg" OR $tipoimg == "image/png")){
             //debe volver a la pagina nuevo video, error "el formato no es compatible"
-        	header('location:nuevo_video.php?error=2');
+        	header('location:../admin.php?action=nuevo_video&error=2');
     	}  
         // Si la imagen paso las pruebas. 
             else{
@@ -55,16 +55,16 @@
 
                         if(!isset($resultado)){ 
                        		//Si ocurre un error en la consulta, error "no se puedo modificar la base de datos"
-                    		header('location:nuevo_video?error=4');
+                    		header('location:../admin.php?action=nuevo_video&error=4');
                 		} else{
                     		//SUBIDO CORRECTAMENTE
-                            header("location:index.php?action=subido");
+                            header("location:../admin.php?action=subido");
                 		}
             		}
                     else
                     {
                     //no se pudo mover el video
-                        header('location:nuevo_video.php?error=1');
+                        header('location:../admin.php?action=nuevo_video&error=1');
                     }   
         		}
                 else
@@ -75,11 +75,11 @@
                         //busco en todos los registro encontrados
                         if($registros['palabra']==$palabra){
                             //si la palabra ya existe la mando junto con el error
-                            header('location:nuevo_video.php?error=0&palabra='.$registros["palabra"].'');
+                            header('location:../admin.php?action=nuevo_video&error=0&palabra='.$registros["palabra"].'');
                         }
                         elseif($registros['video']==$url[1]){
                            //si la palabra ya existe la mando junto con el error
-                            header('location:nuevo_video.php?error=0&direccion='.$registros["video"].'');
+                            header('location:../admin.php?action=nuevo_video&error=0&direccion='.$registros["video"].'');
                         }
                     }
                     

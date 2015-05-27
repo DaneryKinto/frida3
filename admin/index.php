@@ -1,13 +1,16 @@
-<?php include "header.php"; include "../php/funciones.php"; ?>
-
-	
+	<div class="container"
+	<?php 
+	if(isset($_SESSION['usuario'])){
+		echo "class=margen-admin";
+	}
+	 ?>
+	>	
 	<div class="col-xs-12 col-lg-12">
 		<div class='panel panel-default'>
 			<div class='panel-heading'>
 			   	<h3 class='panel-title'>
 			   		Videos subidos 
 			   		<a class="btn btn-default" href="nuevo_video.php" role="button">Agregar video</a>
-
 			   	</h3>
 			</div>
 			<div class='panel-body'>
@@ -23,7 +26,8 @@
 			        </tr>
 			    </thead>
 			    <tbody>
-			        <?php 
+			        <?php
+			        	include("php/funciones.php");
 			         	$enlace = conectar();
 			         	// Pedimos el nombre de la página ej: index.php.
 			         	$url = basename($_SERVER ["PHP_SELF"]);
@@ -97,8 +101,6 @@
 			</div>
 		</div>	
 	</div>
-
-
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Panel heading</div>
@@ -111,8 +113,4 @@
     ...
   </table>
 </div>
-
-
-
-
-<?php include "footer.php";?>
+	</div>

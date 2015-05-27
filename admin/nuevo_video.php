@@ -1,4 +1,3 @@
-<?php include "header.php"; include "../php/funciones.php";?>
     <div class="row">
           <?php 
             //si existe un error al subir algo se devuelvo con get
@@ -41,8 +40,7 @@
             }
            ?>
         <div class="col-lg-4 col-lg-offset-4 container well">
-          <form action="../admin/ABM_Video.php" method="POST" role="form" enctype="multipart/form-data">
-          <form action="ABM_Video.php" method="POST" enctype="multipart/form-data" role="form">
+          <form action="admin/ABM_Video.php" method="POST" enctype="multipart/form-data" role="form">
               <legend>Nuevo video</legend>
               
               <!--  NUeva palabra -->
@@ -86,9 +84,6 @@
               <button type="reset" class="btn btn-primary">Borrar campos</button>
 
           </form>
-
         </div>
     </div>    
-
-<?php include "footer.php";?>
 

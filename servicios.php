@@ -6,10 +6,6 @@
 		<?php
 			include("php/home/carousel.php");
 		?>
-
-
-
-
 		<div class="row">
             <div class="intro-home padding-30">
                 <div class="container">
@@ -63,10 +59,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
 
             <div class="about-us margin-30">
                 <div class="container">
@@ -169,15 +161,6 @@
 
         </div>
 
-
-
-
-
-
-
-
-
-
 		
 		<!-- begin main contain -->
 		<section id="maincontain">
@@ -278,37 +261,6 @@
 					</div>
 				</div>
 			</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<!-- inicio seccion newsletter -->
-		<?php
-			include("php/home/newsletter.php");
-		?>
-		<!-- fin seccion newsletter -->
-
-
-
-
 
 		<!-- Este es el pie de pagina -->
 		<?php
